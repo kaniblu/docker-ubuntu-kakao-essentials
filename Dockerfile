@@ -10,7 +10,8 @@ RUN test "$APTGET_SOURCE_KAKAO" -eq 1 && \
 # install minimal requirements
 RUN apt-get update && \
     apt-get install -y --no-install-recommends apt-utils && \
-    apt-get install -y curl locales
+    apt-get install -y curl locales && \
+    apt-get install -y build-essential
 
 # set locale to UTF-8
 RUN locale-gen "en_US.UTF-8"
